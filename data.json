@@ -1,53 +1,81 @@
 {
   "expenses": [
     {
-      "id": 10,
-      "title": "KLEPPSTAD Bedframe, wit/Vissle beige, 140x200 cm",
-      "amount": 119,
-      "url": "https://www.ikea.com/nl/nl/p/kleppstad-bedframe-wit-vissle-beige-00492677/",
-      "date": "2025-03-08T22:09:43.519Z"
+      "id": 1741525995419,
+      "title": "MALM Bedframe hoog met 2 bedlades, wit",
+      "amount": 299,
+      "url": "https://www.ikea.com/nl/nl/p/malm-bedframe-hoog-met-2-bedlades-wit-s59175955/",
+      "date": "2025-03-09T13:13:15.419Z"
     },
     {
-      "id": 1,
-      "title": "KLEPPSTAD Bedframe, wit/Vissle beige, 140x200 cm",
-      "amount": 119,
-      "url": "https://www.ikea.com/nl/nl/p/kleppstad-bedframe-wit-vissle-beige-00492677/",
-      "date": "2025-03-08T22:09:43.519Z"
+      "id": 1741527115552,
+      "title": "Product Name",
+      "amount": 299.99,
+      "url": "f",
+      "date": "2025-03-09T13:31:55.552Z"
     },
     {
-      "id": 11,
-      "title": "VALEVÅG Pocketveringmatras, stevig/lichtblauw, 140x200 cm",
-      "amount": 229,
-      "url": "https://www.ikea.com/nl/nl/p/valevag-pocketveringmatras-stevig-lichtblauw-00450658/",
-      "date": "2025-03-08T22:10:03.728Z"
+      "id": 1741527441475,
+      "title": "MALM Bedframe hoog met 2 bedlades, wit",
+      "amount": 299,
+      "url": "https://www.ikea.com/nl/nl/p/malm-bedframe-hoog-met-2-bedlades-wit-s59175955/",
+      "date": "2025-03-09T13:37:21.475Z"
     },
     {
-      "id": 12,
-      "title": "LANDSKRONA 2-zitsbank, Gunnared donkergrijs/hout",
-      "amount": 499,
-      "url": "https://www.ikea.com/nl/nl/p/landskrona-2-zitsbank-gunnared-donkergrijs-hout-s49270279/#content",
-      "date": "2025-03-08T22:21:18.632Z"
+      "id": 1741527443322,
+      "title": "MALM Bedframe hoog met 2 bedlades, wit",
+      "amount": 299,
+      "url": "https://www.ikea.com/nl/nl/p/malm-bedframe-hoog-met-2-bedlades-wit-s59175955/",
+      "date": "2025-03-09T13:37:23.322Z"
     },
     {
-      "id": 1741523090597,
-      "title": "Magimix Nespresso Essenza Mini Zwart",
-      "amount": 89.99,
-      "url": "https://www.coolblue.nl/product/812926/magimix-nespresso-essenza-mini-zwart.html",
-      "date": "2025-03-09T12:24:50.597Z"
+      "id": 1741527445113,
+      "title": "MALM Bedframe hoog met 2 bedlades, wit",
+      "amount": 299,
+      "url": "https://www.ikea.com/nl/nl/p/malm-bedframe-hoog-met-2-bedlades-wit-s59175955/",
+      "date": "2025-03-09T13:37:25.113Z"
     },
     {
-      "id": 1741523146290,
-      "title": "PlayStation 5 Slim Digital Edition",
-      "amount": 449,
-      "url": "https://www.coolblue.nl/product/941836/playstation-5-slim-digital-edition.html",
-      "date": "2025-03-09T12:25:46.290Z"
+      "id": 1741527447045,
+      "title": "MALM Bedframe hoog met 2 bedlades, wit",
+      "amount": 299,
+      "url": "https://www.ikea.com/nl/nl/p/malm-bedframe-hoog-met-2-bedlades-wit-s59175955/",
+      "date": "2025-03-09T13:37:27.045Z"
     },
     {
-      "id": 1741523159031,
-      "title": "RÅGKORN Sierpot binnen/buiten, donkergrijs/beige",
-      "amount": 9.99,
-      "url": "https://www.ikea.com/nl/nl/p/ragkorn-sierpot-binnen-buiten-donkergrijs-beige-00407556/",
-      "date": "2025-03-09T12:25:59.031Z"
+      "id": 1741527449241,
+      "title": "MALM Bedframe hoog met 2 bedlades, wit",
+      "amount": 299,
+      "url": "https://www.ikea.com/nl/nl/p/malm-bedframe-hoog-met-2-bedlades-wit-s59175955/",
+      "date": "2025-03-09T13:37:29.241Z"
+    },
+    {
+      "id": 1741527451778,
+      "title": "MALM Bedframe hoog met 2 bedlades, wit",
+      "amount": 299,
+      "url": "https://www.ikea.com/nl/nl/p/malm-bedframe-hoog-met-2-bedlades-wit-s59175955/",
+      "date": "2025-03-09T13:37:31.778Z"
+    },
+    {
+      "id": 1741527454220,
+      "title": "MALM Bedframe hoog met 2 bedlades, wit",
+      "amount": 299,
+      "url": "https://www.ikea.com/nl/nl/p/malm-bedframe-hoog-met-2-bedlades-wit-s59175955/",
+      "date": "2025-03-09T13:37:34.220Z"
+    },
+    {
+      "id": 1741527456165,
+      "title": "MALM Bedframe hoog met 2 bedlades, wit",
+      "amount": 299,
+      "url": "https://www.ikea.com/nl/nl/p/malm-bedframe-hoog-met-2-bedlades-wit-s59175955/",
+      "date": "2025-03-09T13:37:36.165Z"
+    },
+    {
+      "id": 1741527457841,
+      "title": "MALM Bedframe hoog met 2 bedlades, wit",
+      "amount": 299,
+      "url": "https://www.ikea.com/nl/nl/p/malm-bedframe-hoog-met-2-bedlades-wit-s59175955/",
+      "date": "2025-03-09T13:37:37.841Z"
     }
   ]
 }

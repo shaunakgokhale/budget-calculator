@@ -1,0 +1,11 @@
+<div 
+  class="expense-item flex items-center p-4 rounded-lg hover:bg-gray-100"
+  onclick="selectExpense(expense)"
+  data-expense-id="${expense.id}"
+>
+  <!-- <span class="w-8 text-gray-400">${index + 1}.</span> -->
+  <span class="flex-grow text-gray-800 font-medium">
+    ${expense.title}
+  </span>
+  <span class="text-gray-600 font-semibold">${formatCurrency(expense.amount)}</span>
+</div> 

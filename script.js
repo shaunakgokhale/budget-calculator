@@ -1,6 +1,20 @@
 // script.js
 console.log("JavaScript is linked correctly!");
 
+// Keep track of selected expense and summary card visibility
+let selectedExpense = null;
+let isSummaryCardVisible = true;
+
+// Load the list item template
+let listItemTemplate = '';
+
+fetch('components/list-item.html')
+  .then(response => response.text())
+  .then(html => {
+    listItemTemplate = html;
+  })
+  .catch(error => console.error('Error loading list item template:', error));
+
 // Function to format number as currency
 const formatCurrency = (amount) => {
   return new Intl.NumberFormat('en-EU', {
@@ -8,6 +22,82 @@ const formatCurrency = (amount) => {
     currency: 'EUR',
     minimumFractionDigits: 2
   }).format(amount);
+};
+
+// Function to toggle summary card visibility
+const toggleSummaryCard = (show) => {
+  const summaryContainer = document.getElementById('summaryCardContainer');
+  const expenseListContainer = document.getElementById('expenseListContainer');
+  
+  if (show === undefined) {
+    show = !isSummaryCardVisible;
+  }
+  
+  isSummaryCardVisible = show;
+  
+  if (show) {
+    summaryContainer.classList.remove('hidden');
+    expenseListContainer.classList.remove('md:col-span-3');
+    expenseListContainer.classList.add('md:col-span-2');
+  } else {
+    summaryContainer.classList.add('hidden');
+    expenseListContainer.classList.remove('md:col-span-2');
+    expenseListContainer.classList.add('md:col-span-3');
+  }
+};
+
+// Function to update the summary card
+const updateSummaryCard = (expense) => {
+  const detailsDiv = document.getElementById('selectedItemDetails');
+  const noSelectionDiv = document.getElementById('noSelectionMessage');
+  const titleElement = document.getElementById('selectedTitle');
+  const priceElement = document.getElementById('selectedPrice');
+  const openUrlBtn = document.getElementById('openUrlBtn');
+
+  if (expense) {
+    titleElement.textContent = expense.title;
+    priceElement.textContent = formatCurrency(expense.amount);
+    openUrlBtn.style.display = expense.url ? 'flex' : 'none';
+    detailsDiv.classList.remove('hidden');
+    noSelectionDiv.classList.add('hidden');
+    selectedExpense = expense;
+    toggleSummaryCard(true);
+  } else {
+    detailsDiv.classList.add('hidden');
+    noSelectionDiv.classList.remove('hidden');
+    selectedExpense = null;
+  }
+};
+
+// Function to handle item selection
+const selectExpense = (expense) => {
+  // Remove selection from all items
+  document.querySelectorAll('.expense-item').forEach(item => {
+    item.classList.remove('bg-blue-50', 'shadow-sm');
+  });
+  
+  // Add selection to clicked item
+  const itemElement = document.querySelector(`[data-expense-id="${expense.id}"]`);
+  if (itemElement) {
+    itemElement.classList.add('bg-blue-50', 'shadow-sm');
+  }
+  
+  updateSummaryCard(expense);
+};
+
+// Function to open selected URL
+const openSelectedUrl = () => {
+  if (selectedExpense && selectedExpense.url) {
+    window.open(selectedExpense.url, '_blank');
+  }
+};
+
+// Function to delete selected expense
+const deleteSelectedExpense = async () => {
+  if (selectedExpense) {
+    await deleteExpense(selectedExpense.id);
+    updateSummaryCard(null);
+  }
 };
 
 // Function to add product from URL
@@ -71,34 +161,13 @@ const deleteExpense = async (id) => {
 
 // Function to create an expense list item
 const createExpenseItem = (expense, index) => {
-  const urlHtml = expense.url 
-    ? `<a href="${expense.url}" target="_blank" class="text-blue-500 hover:underline ml-2">
-         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline" viewBox="0 0 20 20" fill="currentColor">
-           <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-           <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-         </svg>
-       </a>`
-    : '';
-
-  return `
-    <div class="flex items-center border-b border-gray-100 pb-2 group">
-      <span class="w-8 text-gray-400">${index + 1}.</span>
-      <span class="flex-grow text-gray-800">
-        ${expense.title}
-        ${urlHtml}
-      </span>
-      <span class="text-gray-600 mr-4">${formatCurrency(expense.amount)}</span>
-      <button
-        onclick="deleteExpense(${expense.id})"
-        class="opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-red-500 hover:text-red-700"
-        title="Delete expense"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-          <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
-        </svg>
-      </button>
-    </div>
-  `;
+  // Replace template variables with actual values
+  return listItemTemplate
+    .replace('${expense.id}', expense.id)
+    .replace('${index + 1}', index + 1)
+    .replace('${expense.title}', expense.title)
+    .replace('${formatCurrency(expense.amount)}', formatCurrency(expense.amount))
+    .replace('selectExpense(expense)', `selectExpense(${JSON.stringify(expense).replace(/"/g, '&quot;')})`);
 };
 
 // Function to update the total
@@ -106,7 +175,6 @@ const updateTotal = (expenses) => {
   const total = expenses.reduce((sum, expense) => sum + expense.amount, 0);
   const formattedTotal = formatCurrency(total);
   document.getElementById('totalExpenses').textContent = formattedTotal;
-  document.getElementById('totalExpenses2').textContent = formattedTotal;
 };
 
 // Function to load and display expenses
@@ -125,6 +193,16 @@ const loadExpenses = async () => {
     
     // Update the total
     updateTotal(data.expenses);
+
+    // If there was a selected expense, try to reselect it
+    if (selectedExpense) {
+      const expense = data.expenses.find(e => e.id === selectedExpense.id);
+      if (expense) {
+        selectExpense(expense);
+      } else {
+        updateSummaryCard(null);
+      }
+    }
   } catch (error) {
     console.error('Error loading expenses:', error);
     document.getElementById('expenseList').innerHTML = 
