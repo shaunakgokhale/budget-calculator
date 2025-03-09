@@ -1,0 +1,53 @@
+{
+  "expenses": [
+    {
+      "id": 10,
+      "title": "KLEPPSTAD Bedframe, wit/Vissle beige, 140x200 cm",
+      "amount": 119,
+      "url": "https://www.ikea.com/nl/nl/p/kleppstad-bedframe-wit-vissle-beige-00492677/",
+      "date": "2025-03-08T22:09:43.519Z"
+    },
+    {
+      "id": 1,
+      "title": "KLEPPSTAD Bedframe, wit/Vissle beige, 140x200 cm",
+      "amount": 119,
+      "url": "https://www.ikea.com/nl/nl/p/kleppstad-bedframe-wit-vissle-beige-00492677/",
+      "date": "2025-03-08T22:09:43.519Z"
+    },
+    {
+      "id": 11,
+      "title": "VALEVÅG Pocketveringmatras, stevig/lichtblauw, 140x200 cm",
+      "amount": 229,
+      "url": "https://www.ikea.com/nl/nl/p/valevag-pocketveringmatras-stevig-lichtblauw-00450658/",
+      "date": "2025-03-08T22:10:03.728Z"
+    },
+    {
+      "id": 12,
+      "title": "LANDSKRONA 2-zitsbank, Gunnared donkergrijs/hout",
+      "amount": 499,
+      "url": "https://www.ikea.com/nl/nl/p/landskrona-2-zitsbank-gunnared-donkergrijs-hout-s49270279/#content",
+      "date": "2025-03-08T22:21:18.632Z"
+    },
+    {
+      "id": 1741523090597,
+      "title": "Magimix Nespresso Essenza Mini Zwart",
+      "amount": 89.99,
+      "url": "https://www.coolblue.nl/product/812926/magimix-nespresso-essenza-mini-zwart.html",
+      "date": "2025-03-09T12:24:50.597Z"
+    },
+    {
+      "id": 1741523146290,
+      "title": "PlayStation 5 Slim Digital Edition",
+      "amount": 449,
+      "url": "https://www.coolblue.nl/product/941836/playstation-5-slim-digital-edition.html",
+      "date": "2025-03-09T12:25:46.290Z"
+    },
+    {
+      "id": 1741523159031,
+      "title": "RÅGKORN Sierpot binnen/buiten, donkergrijs/beige",
+      "amount": 9.99,
+      "url": "https://www.ikea.com/nl/nl/p/ragkorn-sierpot-binnen-buiten-donkergrijs-beige-00407556/",
+      "date": "2025-03-09T12:25:59.031Z"
+    }
+  ]
+}

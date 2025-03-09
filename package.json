@@ -1,21 +1,23 @@
 {
   "name": "budget-calculator",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "A simple budget calculator with expense tracking",
+  "main": "server.js",
   "scripts": {
-  "build": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
-},
+    "start": "node server.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "devDependencies": {
     "autoprefixer": "^10.4.20",
     "postcss": "^8.5.3",
     "tailwindcss": "^4.0.12"
   },
   "dependencies": {
-    "@tailwindcss/cli": "^4.0.12"
+    "@tailwindcss/cli": "^4.0.12",
+    "express": "^4.18.2",
+    "openai": "^4.28.0"
   }
 }
 
